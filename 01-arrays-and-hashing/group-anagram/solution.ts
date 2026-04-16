@@ -1,3 +1,6 @@
+// O(n * k log k) time complexity
+// O(n * k) space complexity
+
 function groupAnagrams(strs: string[]): string[][] {
     const map = new Map<string, string[]>();
     for(let i = 0; i < strs.length; i++) {
