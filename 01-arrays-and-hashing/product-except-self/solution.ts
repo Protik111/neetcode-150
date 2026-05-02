@@ -21,7 +21,7 @@ function productExceptSelf(nums: number[]): number[] {
   let answer = new Array(n).fill(1);
 
   //prefix
-  for (let i = 0; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     answer[i] = answer[i - 1] * nums[i - 1] || 1;
   }
 
