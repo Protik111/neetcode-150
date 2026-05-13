@@ -19,7 +19,6 @@ function longestConsecutive(nums: number[]): number {
       current = 1;
     }
   }
-  console.log(longest, current);
 
   return Math.max(longest, current);
 }
