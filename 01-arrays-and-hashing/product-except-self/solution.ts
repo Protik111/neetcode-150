@@ -22,7 +22,7 @@ function productExceptSelf(nums: number[]): number[] {
 
   //prefix
   for (let i = 1; i < n; i++) {
-    answer[i] = answer[i - 1] * nums[i - 1] || 1;
+    answer[i] = answer[i - 1] * nums[i - 1];
   }
 
   //suffix
