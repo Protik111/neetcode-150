@@ -1,5 +1,5 @@
 function isValidSudoku(board: string[][]): boolean {
-  const rows = Array.from({ length: 9 }, () => new Set<string>());
+  const rows = Array.from({ length: 9 }, () => new Set<string>()); // rows = [Set(), Set(), Set(), Set(), Set(), Set(), Set(), Set(), Set()]
   const cols = Array.from({ length: 9 }, () => new Set<string>());
   const boxes = Array.from({ length: 9 }, () => new Set<string>());
 
