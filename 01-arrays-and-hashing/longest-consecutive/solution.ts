@@ -36,10 +36,12 @@ function longestConsecutiveWithoutSorting(nums: number[]): number {
 
   for (const num of set) {
     if (!set.has(num - 1)) {
+      //num is like "Am I the first number?"
       let currentNum = num;
       let currentStreak = 1;
 
       while (set.has(currentNum + 1)) {
+        // currentNum is like "Can I extend the sequence?"
         currentNum++;
         currentStreak++;
       }
