@@ -2,6 +2,7 @@
 
 ## Core Idea
 Use two indices to eliminate impossible answers after every comparison.
+Compare elements from opposite ends while shrinking the search space.
 
 ## Goal
 Reduce an O(n²) search into O(n).
