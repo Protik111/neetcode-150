@@ -1,24 +1,45 @@
 function threeSum(nums: number[]): number[][] {
   //sort nums array
-  //fixed a number
-  //take left and right position
-  //iterate the items
-  // add them and return
+  //define array of results = []
+  // iterate items
+  // check duplicacy
+  // define left and right
+  // check greater and less than 0 or push
 
-  //cautious:
-  //check duplicacy
-
-  //Input:
-  //[-1,0,1,2,-1,-4]
-
-  const sortedNum = nums.sort((a, b) => a - b);
+  nums.sort((a, b) => a - b);
+  const result = [];
   //[-4,-1,-1,0,1,2]
-  const firstNum = sortedNum[0];
-  let left = 1;
-  let right = sortedNum.length - 1;
-  for (let i = 0; i < sortedNum.length; i++) {
-    if (i > 0 && sortedNum[i] === sortedNum[i - 1]) {
+  for (let i = 0; i < nums.length - 2; i++) {
+    if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
     }
+
+    let left = i + 1;
+    let right = nums.length - 1;
+
+    while (left < right) {
+      const sum = nums[i] + nums[left] + nums[right];
+
+      if (sum < 0) {
+        left++;
+      } else if (sum > 0) {
+        right--;
+      } else {
+        result.push([nums[i], nums[left], nums[right]]);
+
+        left++;
+        right++;
+
+        while (left < right && nums[left] === nums[left - 1]) {
+          left++;
+        }
+
+        while (left < right && nums[right] === nums[right + 1]) {
+          right--;
+        }
+      }
+    }
   }
+
+  return result;
 }
